@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://drao1rdods4l1"]
+
+[ext_resource type="Texture2D" uid="uid://6v8u0jgmi3iy" path="res://Assets/Images/escritorio.jpg" id="1_bhoq2"]
+[ext_resource type="PackedScene" uid="uid://b7ry4tustecew" path="res://Player/player.tscn" id="1_lmc0q"]
+[ext_resource type="PackedScene" uid="uid://cdt364fu6s6ma" path="res://Npc/npc.tscn" id="3_mp2di"]
+[ext_resource type="PackedScene" uid="uid://ns0j27nxdcqc" path="res://Npc/Policia/policia.tscn" id="4_4wn70"]
+[ext_resource type="PackedScene" uid="uid://bqru4pdr4eodu" path="res://Tasks/panfletos/panfletos.tscn" id="5_3yo41"]
+
+[node name="MundoTeste" type="Node2D"]
+
+[node name="Parede" type="StaticBody2D" parent="."]
+
+[node name="Escritorio" type="Sprite2D" parent="."]
+position = Vector2(487, 175)
+scale = Vector2(2.03, 1.5491667)
+texture = ExtResource("1_bhoq2")
+
+[node name="Player" parent="." instance=ExtResource("1_lmc0q")]
+position = Vector2(541, 276)
+
+[node name="NPC" parent="." instance=ExtResource("3_mp2di")]
+position = Vector2(264, 373)
+
+[node name="Policia" parent="." instance=ExtResource("4_4wn70")]
+position = Vector2(358, -290)
+
+[node name="Panfletos" parent="." instance=ExtResource("5_3yo41")]
+position = Vector2(-292.00003, -286.00003)

@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://chlgwbafrebam"]
+
+[ext_resource type="Script" uid="uid://dt6dpt1fb2dfd" path="res://Assets/Scripts/hud.gd" id="1_txtqx"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_txtqx")
+
+[node name="ClockLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -144.0
+offset_top = 29.0
+offset_right = -54.0
+offset_bottom = 130.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 35
+text = "00:00
+"
+
+[node name="TaskContainer" type="VBoxContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 5.0
+offset_top = -73.0
+offset_right = 426.0
+offset_bottom = 319.0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="TaskContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Missões do dia:"
+
+[node name="TaskList" type="VBoxContainer" parent="TaskContainer"]
+layout_mode = 2

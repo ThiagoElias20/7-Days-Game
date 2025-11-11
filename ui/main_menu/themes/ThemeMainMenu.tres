@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3]
+
+[resource]
+default_font_size = 18
+colors/font_color = Color(0.93, 0.90, 0.82, 1)
+colors/font_outline_color = Color(0, 0, 0, 0.35)
+constants/separation = 10

@@ -1,0 +1,26 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="7_Dias"
+run/main_scene="uid://24t5e1imin60"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+TimeManager="*res://Assets/Scripts/TimeManager.gd"
+TaskManager="*res://Assets/Scripts/TaskManager.gd"
+
+[display]
+
+window/size/mode=3
+window/size/borderless=true

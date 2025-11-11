@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://ns0j27nxdcqc"]
+
+[ext_resource type="Script" uid="uid://bln6vhy35gxta" path="res://policia.gd" id="1_252ev"]
+[ext_resource type="Texture2D" uid="uid://criptn63jvf0t" path="res://icon.svg" id="2_tw6jb"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxcha"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_252ev"]
+
+[node name="Policia" type="CharacterBody2D"]
+script = ExtResource("1_252ev")
+chase_speed = 250.0
+fov_length = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_xxcha")
+
+[node name="VisionCone" type="Polygon2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.7432716, 1.1963539, 2.5947948e-06, 1)
+texture = ExtResource("2_tw6jb")
+
+[node name="WanderTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="DetectionRadius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius"]
+scale = Vector2(50, 50)
+shape = SubResource("CircleShape2D_252ev")
+
+[node name="LineOfSight" type="RayCast2D" parent="."]
+
+[connection signal="timeout" from="WanderTimer" to="." method="pick_new_direction"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqru4pdr4eodu"]
+
+[ext_resource type="Texture2D" uid="uid://c4d23yi81s2t4" path="res://Assets/Images/panfletos.PNG" id="1_5ng5e"]
+[ext_resource type="Script" uid="uid://c4h5kecvt5b80" path="res://Tasks/panfletos/panfletos.gd" id="1_8y22l"]
+[ext_resource type="Script" uid="uid://c0wcoky1w8hqr" path="res://Tasks/panfletos/area.gd" id="2_7vac8"]
+[ext_resource type="PackedScene" uid="uid://epukii1whgnd" path="res://Tasks/panfletos/objective.tscn" id="3_uv35d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8y22l"]
+
+[node name="Panfletos" type="Node2D"]
+scale = Vector2(8, 8)
+script = ExtResource("1_8y22l")
+
+[node name="Panfleto" type="TextureRect" parent="."]
+offset_left = -8.400001
+offset_top = -9.0
+offset_right = 679.6
+offset_bottom = 867.0
+scale = Vector2(0.025, 0.02)
+texture = ExtResource("1_5ng5e")
+
+[node name="Objective" parent="." instance=ExtResource("3_uv35d")]
+
+[node name="Area" type="Area2D" parent="."]
+position = Vector2(0.48000145, -0.07999992)
+script = ExtResource("2_7vac8")
+
+[node name="Area Colidivel" type="CollisionShape2D" parent="Area"]
+position = Vector2(-0.68000144, 0.07999992)
+shape = SubResource("CircleShape2D_8y22l")
