@@ -2,7 +2,7 @@ extends Node
 
 # --- CONFIGURAÇÃO DO TEMPO ---
 # 1 hora no jogo = 60 segundos reais (1 minuto)
-const GAME_HOUR_IN_REAL_SECONDS = 60.0
+const GAME_HOUR_IN_REAL_SECONDS = 10.0
 
 # O sinal que o HUD e o TaskManager vão ouvir
 signal time_updated(hour, minute)
