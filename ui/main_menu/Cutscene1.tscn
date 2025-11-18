@@ -1,15 +1,15 @@
 [gd_scene load_steps=10 format=3 uid="uid://cpevfj35s5k2d"]
 
 [ext_resource type="Script" uid="uid://bitlb02yfdjhl" path="res://Assets/Scripts/cutscene_1.gd" id="1_np438"]
-[ext_resource type="Texture2D" uid="uid://8bnvn106gmak" path="res://Assets/Images/cutscene1.jpg" id="2_p2bf1"]
 [ext_resource type="FontFile" uid="uid://cr57v5q3vnchg" path="res://Assets/Fonts/STIXTwoText-VariableFont_wght.ttf" id="3_jxaca"]
 [ext_resource type="AudioStream" uid="uid://bsdg872o61v4l" path="res://Assets/Sons/typewriter-typing-68696.mp3" id="4_4ye5f"]
+[ext_resource type="Texture2D" uid="uid://dyp1p0ujfc7cl" path="res://Assets/Images/Gemini_Generated_Image_xy2gyfxy2gyfxy2g.png" id="4_p2bf1"]
 [ext_resource type="AudioStream" uid="uid://c1un36yni2bgi" path="res://Assets/Sons/Sala_segura_soundtrack.mp3" id="5_mst7r"]
-[ext_resource type="Texture2D" uid="uid://g2t64se4wmtd" path="res://Assets/Images/10_basic_message_boxes_by_CharlesGabriel.png" id="5_p2bf1"]
+[ext_resource type="Texture2D" uid="uid://cw7uspw08sm30" path="res://Assets/Images/Gemini_Generated_Image_u0gxfhu0gxfhu0gx-removebg-preview.png" id="5_p2bf1"]
 
 [sub_resource type="Animation" id="Animation_img0r"]
 resource_name = "AnimacaoInicio"
-length = 49.0
+length = 54.0
 markers = [{
 "color": Color(1, 1, 1, 1),
 "name": &"play",
@@ -65,9 +65,30 @@ tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"values": []
+"times": PackedFloat32Array(4.0666666, 10.4, 16.666666, 23.4, 30.3, 38.366665, 44.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -177,29 +198,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_p2bf1")
+texture = ExtResource("4_p2bf1")
 expand_mode = 3
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
-offset_left = 3.0
-offset_right = 1108.0
-offset_bottom = 283.0
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 2857.0
+offset_bottom = 964.0
 texture = ExtResource("5_p2bf1")
-region_rect = Rect2(321.6216, 800.0622, 316.80112, 78.51068)
-patch_margin_left = 1
-patch_margin_top = 6
-patch_margin_right = 1
-patch_margin_bottom = 1
+region_rect = Rect2(3.769287, 93.66434, 1160.7991, 658.3308)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
 
 [node name="Label" type="Label" parent="CanvasLayer/NinePatchRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 39.5
-offset_top = 9.5
-offset_right = -23.0
-offset_bottom = -28.0
+offset_left = 101.0
+offset_top = 40.0
+offset_right = -1602.0
+offset_bottom = -237.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_jxaca")
