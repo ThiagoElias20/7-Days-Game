@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 # --- Constante de Direção ---
 # IMPORTANTE: Confirme que seu sprite "olha" para a DIREITA (Vector2.RIGHT)
 const FORWARD_DIRECTION = Vector2.RIGHT
@@ -21,6 +22,7 @@ var player_target = null
 @onready var line_of_sight = $LineOfSight
 @onready var detection_shape = $DetectionRadius/CollisionShape2D 
 @onready var vision_cone = $VisionCone # <-- NOVO: Referência ao nó Polygon2D
+@onready var anim = $AnimatedSprite2D
 
 var wander_direction = Vector2.ZERO
 # A variável 'debug_draw_color' não é mais necessária
@@ -37,7 +39,7 @@ func _physics_process(delta):
 			_wander_state(delta)
 		States.CHASE:
 			_chase_state(delta)
-			
+	_update_animation()
 	move_and_slide()
 
 	# --- INÍCIO DA LÓGICA DE CAPTURA ---
@@ -85,6 +87,7 @@ func _wander_state(delta):
 	
 	if velocity.length_squared() > 0: 
 		look_at(global_position + velocity)
+		_update_animation()
 	
 	var target = _find_player_target()
 	if target != null:
@@ -100,6 +103,7 @@ func _chase_state(delta):
 			var direction = (player_target.global_position - global_position).normalized()
 			velocity = direction * chase_speed
 			look_at(player_target.global_position)
+			_update_animation()
 		else:
 			player_target = null
 			current_state = States.WANDER
@@ -166,3 +170,21 @@ func _go_to_game_over():
 	# Carrega a cena de game over
 	# !! MUDE "res://game_over.tscn" para o caminho real da sua cena !!
 	get_tree().change_scene_to_file("res://ui/main_menu/cena_game_over.tscn")
+	
+func _update_animation():
+	var v = velocity
+
+	if v.length() == 0:
+		anim.play("IDLE")
+		return
+
+	if abs(v.x) > abs(v.y):
+		if v.x > 0:
+			anim.play("RIGHT")
+		else:
+			anim.play("LEFT")
+	else:
+		if v.y > 0:
+			anim.play("DOWN")
+		else:
+			anim.play("UP")
