@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://irxieeangu5i"]
+
+[ext_resource type="Script" uid="uid://r62cslwu1i4v" path="res://Assets/Scripts/cena_game_over.gd" id="1_r1jav"]
+[ext_resource type="AudioStream" uid="uid://bjw32ag6gy5b1" path="res://Assets/Sons/caught_song.wav" id="2_in715"]
+
+[node name="CenaGameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r1jav")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_in715")
+autoplay = true

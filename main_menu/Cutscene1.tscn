@@ -1,0 +1,247 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpevfj35s5k2d"]
+
+[ext_resource type="Script" uid="uid://bitlb02yfdjhl" path="res://Assets/Scripts/cutscene_1.gd" id="1_np438"]
+[ext_resource type="FontFile" uid="uid://cr57v5q3vnchg" path="res://Assets/Fonts/STIXTwoText-VariableFont_wght.ttf" id="3_jxaca"]
+[ext_resource type="AudioStream" uid="uid://bsdg872o61v4l" path="res://Assets/Sons/typewriter-typing-68696.mp3" id="4_4ye5f"]
+[ext_resource type="Texture2D" uid="uid://dyp1p0ujfc7cl" path="res://Assets/Images/Gemini_Generated_Image_xy2gyfxy2gyfxy2g.png" id="4_p2bf1"]
+[ext_resource type="AudioStream" uid="uid://c1un36yni2bgi" path="res://Assets/Sons/Sala_segura_soundtrack.mp3" id="5_mst7r"]
+[ext_resource type="Texture2D" uid="uid://cw7uspw08sm30" path="res://Assets/Images/Gemini_Generated_Image_u0gxfhu0gxfhu0gx-removebg-preview.png" id="5_p2bf1"]
+
+[sub_resource type="Animation" id="Animation_img0r"]
+resource_name = "AnimacaoInicio"
+length = 54.0
+markers = [{
+"color": Color(1, 1, 1, 1),
+"name": &"play",
+"time": 0.0
+}]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 46.366665, 49),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioMaquinaEscrever")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 3.1333334),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [],
+"method": &"stop"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.0666666, 10.4, 16.666666, 23.4, 30.3, 38.366665, 44.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}, {
+"args": [],
+"method": &"restaurar_velocidade"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/NinePatchRect/Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 6.633333, 7.412669, 12.8, 13.966666, 20, 21.166666, 26, 27.166666, 34.5, 35.966667, 41, 42.133335, 46.23285),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Pronto… terminei. Cada página dessas pode me levar direto para a cadeia… ou coisa pior.
+A polícia está em todo lugar… às vezes acho que já sabem o que eu faço, só estão esperando eu dar um passo errado.
+Não queria sair… mas é necessário, senão o público não vai saber o que estão fazendo com a gente.
+Tenho que ser rápido. Deixar os panfletos nos lugares certos e voltar antes que desconfiem.
+Se alguém me parar na rua… eu não sei se consigo inventar uma desculpa convincente… Ser preso em uma prisão comum seria somente um sonho ruim...
+É só o primeiro dia… e já parece que estou sendo seguido, mesmo dentro do meu quarto.
+Não há tempo a perder.", "Pronto… terminei. Cada página dessas pode me levar direto para a cadeia… ou coisa pior.", "", "A polícia está em todo lugar… às vezes acho que já sabem o que eu faço, só estão esperando eu dar um passo errado.", "", "Não queria sair… mas é necessário, senão o público não vai saber o que estão fazendo com a gente.", "", "Tenho que ser rápido. Deixar os panfletos nos lugares certos e voltar antes que desconfiem.", "", "Se alguém me parar na rua… eu não sei se consigo inventar uma desculpa convincente… Ser preso em uma prisão comum seria somente um sonho ruim...", "", "É só o primeiro dia… e já parece que estou sendo seguido, mesmo dentro do meu quarto.", "", "Não há tempo a perder.", ""]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/NinePatchRect/Label:visible_characters")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6.633333, 7.412669, 9.612669, 12.8, 13.966666, 16, 20, 21.166666, 23, 26, 27.166666, 29, 34.5, 35.966667, 38, 41, 42.133335, 44),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 0, 96, 96, 0, 131, 131, 0, 112, 112, 0, 100, 100, 0, 155, 155, 0, 95, 95, 0, 22]
+}
+
+[sub_resource type="Animation" id="Animation_xvs0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/NinePatchRect/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Pronto… terminei. Cada página dessas pode me levar direto para a cadeia… ou coisa pior.
+A polícia está em todo lugar… às vezes acho que já sabem o que eu faço, só estão esperando eu dar um passo errado.
+Não queria sair… mas é necessário, senão o público não vai saber o que estão fazendo com a gente.
+Tenho que ser rápido. Deixar os panfletos nos lugares certos e voltar antes que desconfiem.
+Se alguém me parar na rua… eu não sei se consigo inventar uma desculpa convincente… Ser preso em uma prisão comum seria somente um sonho ruim...
+É só o primeiro dia… e já parece que estou sendo seguido, mesmo dentro do meu quarto.
+Não há tempo a perder."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/NinePatchRect/Label:visible_characters")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nwf1u"]
+_data = {
+&"AnimacaoInicio": SubResource("Animation_img0r"),
+&"RESET": SubResource("Animation_xvs0w")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_np438")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nwf1u")
+}
+autoplay = "AnimacaoInicio"
+movie_quit_on_finish = true
+
+[node name="AudioMaquinaEscrever" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4ye5f")
+volume_db = 2.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mst7r")
+volume_db = 4.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_p2bf1")
+expand_mode = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 2857.0
+offset_bottom = 964.0
+texture = ExtResource("5_p2bf1")
+region_rect = Rect2(3.769287, 93.66434, 1160.7991, 658.3308)
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="Label" type="Label" parent="CanvasLayer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 101.0
+offset_top = 40.0
+offset_right = -1602.0
+offset_bottom = -237.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_jxaca")
+theme_override_font_sizes/font_size = 50
+text = "Pronto… terminei. Cada página dessas pode me levar direto para a cadeia… ou coisa pior.
+A polícia está em todo lugar… às vezes acho que já sabem o que eu faço, só estão esperando eu dar um passo errado.
+Não queria sair… mas é necessário, senão o público não vai saber o que estão fazendo com a gente.
+Tenho que ser rápido. Deixar os panfletos nos lugares certos e voltar antes que desconfiem.
+Se alguém me parar na rua… eu não sei se consigo inventar uma desculpa convincente… Ser preso em uma prisão comum seria somente um sonho ruim...
+É só o primeiro dia… e já parece que estou sendo seguido, mesmo dentro do meu quarto.
+Não há tempo a perder."
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/color = Color(0, 0, 0, 1)
