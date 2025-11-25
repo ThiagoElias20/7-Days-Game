@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bln6vhy35gxta" path="res://Npc/Policia/policia.gd" id="1_252ev"]
 [ext_resource type="Texture2D" uid="uid://criptn63jvf0t" path="res://icon.svg" id="2_tw6jb"]
-[ext_resource type="Texture2D" uid="uid://fhw77cw5qh3t" path="res://Assets/Images/police_1.png" id="2_yiqhh"]
+[ext_resource type="Texture2D" uid="uid://fhw77cw5qh3t" path="res://Images/police_1.png" id="2_yiqhh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxcha"]
 
@@ -271,6 +271,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="DetectionRadius" type="Area2D" parent="."]
+scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius"]
 scale = Vector2(50, 50)

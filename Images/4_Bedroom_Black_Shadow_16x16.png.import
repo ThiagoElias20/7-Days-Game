@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dr3ck2uh8ml4d"
-path="res://.godot/imported/4_Bedroom_Black_Shadow_16x16.png-e9f8b8d1db790e17bf18d7b7a1586ff8.ctex"
+path="res://.godot/imported/4_Bedroom_Black_Shadow_16x16.png-aacf9db660d132006266a7357a22d185.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/4_Bedroom_Black_Shadow_16x16.png"
-dest_files=["res://.godot/imported/4_Bedroom_Black_Shadow_16x16.png-e9f8b8d1db790e17bf18d7b7a1586ff8.ctex"]
+source_file="res://Images/4_Bedroom_Black_Shadow_16x16.png"
+dest_files=["res://.godot/imported/4_Bedroom_Black_Shadow_16x16.png-aacf9db660d132006266a7357a22d185.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5p4h6pups7i4"
-path="res://.godot/imported/26_Condominium_Black_Shadow_16x16.png-b664d0d7cf7f4f17e00544d1f7d1d89d.ctex"
+path="res://.godot/imported/26_Condominium_Black_Shadow_16x16.png-792ca6bccac24cacd2c6290e10df2ae6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/26_Condominium_Black_Shadow_16x16.png"
-dest_files=["res://.godot/imported/26_Condominium_Black_Shadow_16x16.png-b664d0d7cf7f4f17e00544d1f7d1d89d.ctex"]
+source_file="res://Images/26_Condominium_Black_Shadow_16x16.png"
+dest_files=["res://.godot/imported/26_Condominium_Black_Shadow_16x16.png-792ca6bccac24cacd2c6290e10df2ae6.ctex"]
 
 [params]
 

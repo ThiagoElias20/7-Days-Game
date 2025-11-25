@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cl80qnxdffqwq"
-path="res://.godot/imported/Room_Builder_Floor_Paths_16x16.png-06d1ddf56f8c9a2b08070a731643a1e9.ctex"
+path="res://.godot/imported/Room_Builder_Floor_Paths_16x16.png-f6f60297e729f4210390e2813bc0450c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Room_Builder_Floor_Paths_16x16.png"
-dest_files=["res://.godot/imported/Room_Builder_Floor_Paths_16x16.png-06d1ddf56f8c9a2b08070a731643a1e9.ctex"]
+source_file="res://Images/Room_Builder_Floor_Paths_16x16.png"
+dest_files=["res://.godot/imported/Room_Builder_Floor_Paths_16x16.png-f6f60297e729f4210390e2813bc0450c.ctex"]
 
 [params]
 

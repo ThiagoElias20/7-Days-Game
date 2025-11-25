@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4d23yi81s2t4"
-path="res://.godot/imported/panfletos.PNG-a352ecb44196813e1fd1a72f99c541ee.ctex"
+path="res://.godot/imported/panfletos.PNG-2a824afe74c8d7ccc18b58ff67030274.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/panfletos.PNG"
-dest_files=["res://.godot/imported/panfletos.PNG-a352ecb44196813e1fd1a72f99c541ee.ctex"]
+source_file="res://Images/panfletos.PNG"
+dest_files=["res://.godot/imported/panfletos.PNG-2a824afe74c8d7ccc18b58ff67030274.ctex"]
 
 [params]
 

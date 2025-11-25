@@ -9,4 +9,5 @@ func _ready():
 
 func _on_body_entered(body):
 	panfleto.show()
+	TaskManager.place_flyer()
 	objetivo.hide()

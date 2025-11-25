@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uhtbtxlpc2jq"
-path="res://.godot/imported/7_Art_Black_Shadow_16x16.png-89ad4d30ce2dea760ac5da17724fb767.ctex"
+path="res://.godot/imported/7_Art_Black_Shadow_16x16.png-c01733fb5f903fcd1fa705ab85c6900a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/7_Art_Black_Shadow_16x16.png"
-dest_files=["res://.godot/imported/7_Art_Black_Shadow_16x16.png-89ad4d30ce2dea760ac5da17724fb767.ctex"]
+source_file="res://Images/7_Art_Black_Shadow_16x16.png"
+dest_files=["res://.godot/imported/7_Art_Black_Shadow_16x16.png-c01733fb5f903fcd1fa705ab85c6900a.ctex"]
 
 [params]
 

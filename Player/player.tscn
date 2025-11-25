@@ -248,15 +248,14 @@ animations = [{
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.85470086, 9.40171)
-scale = Vector2(1.72, 1.72)
+position = Vector2(0, 3.750001)
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, 1)
-scale = Vector2(2.1079998, 2.1079998)
 sprite_frames = SubResource("SpriteFrames_sm0op")
 animation = &"WALK DOWN"
 frame_progress = 0.6727229
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)

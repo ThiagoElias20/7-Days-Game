@@ -54,3 +54,4 @@ func get_time_string() -> String:
 
 func get_current_hour() -> int:
 	return current_hour
+	

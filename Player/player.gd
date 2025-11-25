@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 300.0
+@export var speed: float = 100.0
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 # Estados possíveis: "UP", "DOWN", "LEFT", "RIGHT"

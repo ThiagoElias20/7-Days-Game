@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://u17pqxxjjpxh"
-path="res://.godot/imported/telagameover.jpg-d7186d75663895dbe1d99daaba9a64e2.ctex"
+path="res://.godot/imported/telagameover.jpg-f09ddffa7842689f3b0b36087d97b85a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/telagameover.jpg"
-dest_files=["res://.godot/imported/telagameover.jpg-d7186d75663895dbe1d99daaba9a64e2.ctex"]
+source_file="res://Images/telagameover.jpg"
+dest_files=["res://.godot/imported/telagameover.jpg-f09ddffa7842689f3b0b36087d97b85a.ctex"]
 
 [params]
 

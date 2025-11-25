@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq2un6smk3l74"
-path="res://.godot/imported/Room_Builder_Arched_Entryways_16x16.png-5c88d65b140a0b1772b85859343c1e8d.ctex"
+path="res://.godot/imported/Room_Builder_Arched_Entryways_16x16.png-855948627f4758b9a81a0d48590be504.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Room_Builder_Arched_Entryways_16x16.png"
-dest_files=["res://.godot/imported/Room_Builder_Arched_Entryways_16x16.png-5c88d65b140a0b1772b85859343c1e8d.ctex"]
+source_file="res://Images/Room_Builder_Arched_Entryways_16x16.png"
+dest_files=["res://.godot/imported/Room_Builder_Arched_Entryways_16x16.png-855948627f4758b9a81a0d48590be504.ctex"]
 
 [params]
 
