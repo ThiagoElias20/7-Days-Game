@@ -6,15 +6,9 @@ enum States { WANDER, CHASE }
 var current_state = States.WANDER
 var player_target = null
 
-@export var patrol_distance_x: float = 50.0
-@export var patrol_distance_y: float = 0.0
-@export var wait_time_patrol: float = 1.0
-
-var patrol_center: Vector2
+@export var patrol_point_a: Vector2
+@export var patrol_point_b: Vector2
 var patrol_target: Vector2
-var going_forward := true
-var waiting_patrol := false
-
 
 @export var wander_speed = 50.0
 @export var chase_speed = 120.0
@@ -26,22 +20,13 @@ var waiting_patrol := false
 @onready var detection_shape = $DetectionRadius/CollisionShape2D
 @onready var vision_cone = $VisionCone
 @onready var anim = $AnimatedSprite2D
-@onready var wait_patrol_timer = $WaitTimePatrol
 
 var facing_dir = FORWARD_DIRECTION
 var _last_facing_dir = Vector2.ZERO
 
 func _ready():
-	patrol_center = global_position
-	_update_patrol_target()
+	patrol_target = patrol_point_b
 	_update_vision_cone()
-
-
-func _update_patrol_target():
-	if going_forward:
-		patrol_target = patrol_center + Vector2(patrol_distance_x, patrol_distance_y)
-	else:
-		patrol_target = patrol_center - Vector2(patrol_distance_x, patrol_distance_y)
 
 func _physics_process(delta):
 	match current_state:
@@ -79,26 +64,18 @@ func _update_vision_cone_if_needed():
 		_update_vision_cone()
 
 # ------------------ ESTADOS -----------------------
-#func _on_wait_time_patrol_timeout() -> void:
-	#print('timeout')
-	#waiting_patrol = false
-	#going_forward = not going_forward
-	#_update_patrol_target() # Replace with function body.
 
 func _wander_state(delta):
 	vision_cone.modulate = Color(1,1,1,0.3)
+
 	var dir = (patrol_target - global_position).normalized()
 	velocity = dir * wander_speed
-	
-	# Chegou no destino → troca direção
-	if global_position.distance_to(patrol_target) < 5 : # and not waiting_patrol
-		#waiting_patrol = true
-		velocity = Vector2.ZERO
-		going_forward = not going_forward
-		_update_patrol_target() 
-		#wait_patrol_timer.start(wait_time_patrol)
-		return  # ISSO É ESSENCIAL
 
+	if global_position.distance_to(patrol_target) < 5:
+		if patrol_target == patrol_point_a:
+			patrol_target = patrol_point_b
+		else:
+			patrol_target = patrol_point_a
 
 	var target = _find_player_target()
 	if target:
@@ -107,6 +84,7 @@ func _wander_state(delta):
 
 func _chase_state(delta):
 	vision_cone.modulate = Color(1,0,0,0.4)
+
 	if player_target:
 		if _can_see_player(player_target):
 			var dir = (player_target.global_position - global_position).normalized()

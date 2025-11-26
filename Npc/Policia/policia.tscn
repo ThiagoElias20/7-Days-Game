@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://ns0j27nxdcqc"]
 
-[ext_resource type="Script" uid="uid://bln6vhy35gxta" path="res://Policia/policia.gd" id="1_252ev"]
+[ext_resource type="Script" uid="uid://bln6vhy35gxta" path="res://Npc/Policia/policia.gd" id="1_252ev"]
 [ext_resource type="Texture2D" uid="uid://fhw77cw5qh3t" path="res://Images/police_1.png" id="2_yiqhh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxcha"]
@@ -245,12 +245,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_252ev"]
-radius = 10.08
 
 [node name="Policia" type="CharacterBody2D"]
 script = ExtResource("1_252ev")
-fov_angle = 20.0
-fov_length = 150.0
+patrol_point_a = Vector2(300, 0)
+patrol_point_b = Vector2(-100, 0)
+fov_length = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xxcha")
@@ -273,9 +273,4 @@ shape = SubResource("CircleShape2D_252ev")
 
 [node name="LineOfSight" type="RayCast2D" parent="."]
 
-[node name="WaitTimePatrol" type="Timer" parent="."]
-process_callback = 0
-one_shot = true
-
 [connection signal="timeout" from="WanderTimer" to="." method="pick_new_direction"]
-[connection signal="timeout" from="WaitTimePatrol" to="." method="_on_wait_time_patrol_timeout"]
