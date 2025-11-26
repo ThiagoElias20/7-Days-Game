@@ -1,7 +1,6 @@
-[gd_scene load_steps=35 format=3 uid="uid://ns0j27nxdcqc"]
+[gd_scene load_steps=34 format=3 uid="uid://ns0j27nxdcqc"]
 
-[ext_resource type="Script" uid="uid://bln6vhy35gxta" path="res://Npc/Policia/policia.gd" id="1_252ev"]
-[ext_resource type="Texture2D" uid="uid://criptn63jvf0t" path="res://icon.svg" id="2_tw6jb"]
+[ext_resource type="Script" uid="uid://bln6vhy35gxta" path="res://Policia/policia.gd" id="1_252ev"]
 [ext_resource type="Texture2D" uid="uid://fhw77cw5qh3t" path="res://Images/police_1.png" id="2_yiqhh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxcha"]
@@ -246,11 +245,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_252ev"]
+radius = 10.08
 
 [node name="Policia" type="CharacterBody2D"]
 script = ExtResource("1_252ev")
-chase_speed = 250.0
-fov_length = 500.0
+fov_angle = 20.0
+fov_length = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xxcha")
@@ -261,17 +261,11 @@ shape = SubResource("CapsuleShape2D_xxcha")
 sprite_frames = SubResource("SpriteFrames_apmd2")
 animation = &"UP"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.7432716, 1.1963539, 2.5947948e-06, 1)
-texture = ExtResource("2_tw6jb")
-
 [node name="WanderTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
 [node name="DetectionRadius" type="Area2D" parent="."]
-scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRadius"]
 scale = Vector2(50, 50)
@@ -279,4 +273,9 @@ shape = SubResource("CircleShape2D_252ev")
 
 [node name="LineOfSight" type="RayCast2D" parent="."]
 
+[node name="WaitTimePatrol" type="Timer" parent="."]
+process_callback = 0
+one_shot = true
+
 [connection signal="timeout" from="WanderTimer" to="." method="pick_new_direction"]
+[connection signal="timeout" from="WaitTimePatrol" to="." method="_on_wait_time_patrol_timeout"]
