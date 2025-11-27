@@ -1,4 +1,4 @@
-[gd_scene load_steps=334 format=3 uid="uid://khfxu1pltd1u"]
+[gd_scene load_steps=332 format=3 uid="uid://khfxu1pltd1u"]
 
 [ext_resource type="Texture2D" uid="uid://b7iqqwb7nfqjb" path="res://Sprites/WIP_Theme/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Others_1.png" id="1_ebfal"]
 [ext_resource type="Texture2D" uid="uid://dxdgxpmm8omrp" path="res://Sprites/PostApocalypse_AssetPack_v1.1.2/Background_Bleak-Yellow_TileSet.png" id="2_lrjei"]
@@ -160,7 +160,6 @@
 [ext_resource type="PackedScene" uid="uid://chlgwbafrebam" path="res://ui/main_menu/hud.tscn" id="158_3043l"]
 [ext_resource type="PackedScene" uid="uid://bqru4pdr4eodu" path="res://Tasks/panfletos/panfletos.tscn" id="159_pdq6a"]
 [ext_resource type="PackedScene" uid="uid://ns0j27nxdcqc" path="res://Policia/policia.tscn" id="160_8x3ts"]
-[ext_resource type="Script" uid="uid://conl1qbkehlhu" path="res://portavolta.gd" id="161_8x3ts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wbf31"]
 texture = ExtResource("17_8i5x6")
@@ -58439,9 +58438,6 @@ texture = ExtResource("94_kisbe")
 [sub_resource type="TileSet" id="TileSet_hkd6o"]
 sources/2 = SubResource("TileSetAtlasSource_7ywlv")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgr3n"]
-size = Vector2(141, 39)
-
 [node name="Node2D" type="Node2D"]
 position = Vector2(-4096, 2440)
 
@@ -58522,15 +58518,5 @@ position = Vector2(5926, 443)
 
 [node name="Policia4" parent="." instance=ExtResource("160_8x3ts")]
 position = Vector2(6360, 1574)
-
-[node name="portavolta" type="Area2D" parent="."]
-position = Vector2(4769, 1389)
-script = ExtResource("161_8x3ts")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="portavolta"]
-position = Vector2(39.5, 2.5)
-shape = SubResource("RectangleShape2D_tgr3n")
-
-[connection signal="body_entered" from="portavolta" to="portavolta" method="_on_body_entered"]
 
 [editable path="Panfletos6"]
