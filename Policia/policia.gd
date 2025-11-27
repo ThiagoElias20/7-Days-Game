@@ -10,6 +10,8 @@ var player_target = null
 @export var patrol_point_b: Vector2
 var patrol_target: Vector2
 
+@export var wait_time_patrol : float
+
 @export var wander_speed = 50.0
 @export var chase_speed = 120.0
 @export var fov_angle = 60.0
@@ -20,9 +22,12 @@ var patrol_target: Vector2
 @onready var detection_shape = $DetectionRadius/CollisionShape2D
 @onready var vision_cone = $VisionCone
 @onready var anim = $AnimatedSprite2D
+@onready var waitTimerPatrol = $WaitTimerPatrol
 
 var facing_dir = FORWARD_DIRECTION
 var _last_facing_dir = Vector2.ZERO
+var is_waiting = false
+
 
 func _ready():
 	patrol_target = patrol_point_b
@@ -68,19 +73,34 @@ func _update_vision_cone_if_needed():
 func _wander_state(delta):
 	vision_cone.modulate = Color(1,1,1,0.3)
 
-	var dir = (patrol_target - global_position).normalized()
-	velocity = dir * wander_speed
-
-	if global_position.distance_to(patrol_target) < 5:
-		if patrol_target == patrol_point_a:
-			patrol_target = patrol_point_b
-		else:
-			patrol_target = patrol_point_a
-
+	# mesmo parado, checa player
 	var target = _find_player_target()
 	if target:
 		player_target = target
 		current_state = States.CHASE
+		return
+
+	if is_waiting:
+		velocity = Vector2.ZERO
+		return
+
+	# movimento normal
+	var dir = (patrol_target - global_position).normalized()
+	velocity = dir * wander_speed
+
+	# chegou no ponto de patrulha
+	if global_position.distance_to(patrol_target) < 5:
+		is_waiting = true
+		velocity = Vector2.ZERO
+		waitTimerPatrol.start(wait_time_patrol)
+	
+func _on_wait_timer_patrol_timeout():
+	# troca destino exclusivamente quando chega em A ou B
+	if patrol_target == patrol_point_a:
+		patrol_target = patrol_point_b
+	else:
+		patrol_target = patrol_point_a
+	is_waiting = false
 
 func _chase_state(delta):
 	vision_cone.modulate = Color(1,0,0,0.4)
@@ -131,9 +151,13 @@ func _go_to_game_over():
 
 func _update_animation():
 	var v = velocity
-
+	
 	if v.length() == 0:
-		anim.play("IDLE")
+		match facing_dir:
+			Vector2.RIGHT: anim.play("IDLE_RIGHT")
+			Vector2.LEFT: anim.play("IDLE_LEFT")
+			Vector2.DOWN: anim.play("IDLE_DOWN")
+			Vector2.UP: anim.play("IDLE_UP")
 		return
 
 	if abs(v.x) > abs(v.y):
