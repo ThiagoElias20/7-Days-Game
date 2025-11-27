@@ -83,7 +83,7 @@ func _mk_button(text: String, node_name: String) -> Button:
 
 func _connect_logic() -> void:
 	# --- Conexões Corrigidas ---
-	# btn_retry.pressed.connect(_on_retry) # Descomentado
+	btn_retry.pressed.connect(_on_retry) # Descomentado
 	btn_menu.pressed.connect(_on_menu)
 
 func _apply_styles() -> void:
@@ -159,7 +159,7 @@ func _full_rect(node: Control) -> void:
 func _on_retry() -> void:
 	print("Tentar Novamente -> Carregando Jogo")
 	# MUDE AQUI: Coloque o caminho para sua cena de jogo principal
-	# get_tree().change_scene_to_file("res://ui/main_menu/Cutscene1.tscn") # <- MUDE ISSO
+	get_tree().change_scene_to_file("res://interior1.tscn") # <- MUDE ISSO
 
 func _on_menu() -> void:
 	print("Voltando ao Menu")

@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://bq1haaiam04h2"]
 
-[ext_resource type="Script" uid="uid://5ninhtf7um6q" path="res://Assets/Scripts/interior_1.gd" id="1_opek3"]
+[ext_resource type="Script" uid="uid://bimdyqag2p48g" path="res://Assets/Scripts/interior_1.gd" id="1_opek3"]
 [ext_resource type="Texture2D" uid="uid://dx57x56ol2wf1" path="res://Sprites/INTERIOR CASA/InteriorTilesLITE.png" id="1_p7ujy"]
-[ext_resource type="Texture2D" uid="uid://dvkhm7lq21awg" path="res://Images/1_Generic_Black_Shadow_16x16.png" id="2_yuseo"]
+[ext_resource type="Texture2D" uid="uid://dvkhm7lq21awg" path="res://Assets/Images/1_Generic_Black_Shadow_16x16.png" id="2_yuseo"]
 [ext_resource type="PackedScene" uid="uid://b7ry4tustecew" path="res://Player/player.tscn" id="3_0ydgs"]
-[ext_resource type="Script" uid="uid://hvlpkrs6hsi4" path="res://porta-casa.gd" id="4_4bmo7"]
+[ext_resource type="Script" uid="uid://wvdiuj8tahg4" path="res://porta-casa.gd" id="4_4bmo7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuseo"]
 texture = ExtResource("1_p7ujy")

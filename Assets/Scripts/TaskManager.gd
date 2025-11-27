@@ -1,78 +1,65 @@
 extends Node
 
-# --- Constantes para o objetivo ---
+# --- Constantes ---
 const FLYER_TARGET: int = 5
-const FLYER_TASK_BASE_NAME: String = "Distribuir panfletos" # A parte fixa do texto
-# ---------------------------------
-
-# --- Constantes para a Tarefa Secundária ---
-const MURAL_TASK_KEY: int = 9
-const MURAL_TASK_NAME: String = "Colocar panfleto no mural"
+const FLYER_TASK_BASE_NAME: String = "Distribuir panfletos"
+const MURAL_TASK_NAME: String = "Colocar panfleto na estatua"
 const MURAL_TASK_COMPLETED: String = MURAL_TASK_NAME + " (feito)"
-# -------------------------------------------
 
-
+# Sinais
 signal tasks_updated(new_tasks_list)
 signal flyer_count_changed(new_count)
+signal mural_unlocked 
+signal casa_liberada # <--- NOVO: Avisa a porta que ela pode abrir
 
 var flyers_placed: int = 0
-var all_tasks = {
-	8: FLYER_TASK_BASE_NAME,
-	9: MURAL_TASK_NAME
-}
-
 var current_tasks: Array[String] = []
 
 func _ready() -> void:
-	# Inicializa a lista de tarefas, gerando a string de panfletos
-	for key in all_tasks:
-		var task_name = all_tasks[key]
-		
-		if key == 8: # A chave da tarefa dinâmica (Panfletos)
-			var initial_flyer_task = create_flyer_task_string(flyers_placed)
-			current_tasks.append(initial_flyer_task)
-		else:
-			# Adiciona a task do Mural não concluída
-			current_tasks.append(task_name)
+	# 1. Inicializa APENAS a missão principal
+	var initial_flyer_task = create_flyer_task_string(flyers_placed)
+	current_tasks.append(initial_flyer_task)
 	
 	await get_tree().process_frame
 	tasks_updated.emit(current_tasks)
 
-
-# Função auxiliar que cria a string formatada da missão de panfletos
 func create_flyer_task_string(count: int) -> String:
-	# Ex: "Distribuir panfletos (3/5)"
-	# A contagem NUNCA deve ser maior que FLYER_TARGET na string.
 	var display_count = min(count, FLYER_TARGET)
 	return "%s (%d/%d)" % [FLYER_TASK_BASE_NAME, display_count, FLYER_TARGET]
 
-
 func place_flyer():
-	# 1. Incrementa a contagem de panfletos, APENAS ATÉ 6 (o sexto panfleto)
-	# O incremento só ocorre se flyers_placed for menor que 6.
-	if flyers_placed < FLYER_TARGET + 1: # TARGET + 1 é 6
+	# Incrementa contagem (Limite é 6: 5 normais + 1 mural)
+	if flyers_placed < FLYER_TARGET + 1:
 		flyers_placed += 1
 		
-		# 2. Lógica principal: Panfletos de 1 a 5
+		# CASO A: Panfletos Normais (1 até 5)
 		if flyers_placed <= FLYER_TARGET:
-			# Apenas atualiza a string de contagem (0/5, 1/5, ..., 5/5)
-			var new_task_string = create_flyer_task_string(flyers_placed)
-			
-			# Encontra a tarefa de panfleto e atualiza
+			# Atualiza o texto da missão principal
 			for i in range(current_tasks.size()):
 				if current_tasks[i].begins_with(FLYER_TASK_BASE_NAME):
-					current_tasks[i] = new_task_string
+					current_tasks[i] = create_flyer_task_string(flyers_placed)
 					break
+			
+			# GATILHO: Se acabou de completar 5/5, libera o Mural
+			if flyers_placed == FLYER_TARGET:
+				print("Missão principal completa! Liberando Mural...")
+				current_tasks.append(MURAL_TASK_NAME)
+				mural_unlocked.emit()
 		
-		# 3. Lógica do Panfleto Extra: O sexto panfleto (flyers_placed == 6)
-		if flyers_placed == FLYER_TARGET + 1:
-			# Muda a tarefa do Mural para (feito)
+		# CASO B: Panfleto do Mural (O 6º panfleto)
+		elif flyers_placed == FLYER_TARGET + 1:
+			# 1. Marca a tarefa do mural como feita
 			for i in range(current_tasks.size()):
-				# Busca pela string original da tarefa do mural
 				if current_tasks[i] == MURAL_TASK_NAME:
 					current_tasks[i] = MURAL_TASK_COMPLETED
 					break
+			
+			# 2. ADICIONA A NOVA TAREFA: VOLTAR PARA CASA
+			current_tasks.append("Voltar para casa")
+			
+			# 3. AVISA A PORTA
+			casa_liberada.emit()
 
-	# 4. Emite o sinal para o HUD (mesmo se flyers_placed for 6)
+	# Atualiza o HUD
 	tasks_updated.emit(current_tasks)
 	flyer_count_changed.emit(flyers_placed)

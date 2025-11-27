@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://irxieeangu5i"]
 
 [ext_resource type="Script" uid="uid://r62cslwu1i4v" path="res://Assets/Scripts/cena_game_over.gd" id="1_r1jav"]
-[ext_resource type="AudioStream" uid="uid://bjw32ag6gy5b1" path="res://Assets/Sons/caught_song.wav" id="2_in715"]
+[ext_resource type="AudioStream" uid="uid://bjw32ag6gy5b1" path="res://Sons/caught_song.wav" id="2_in715"]
 
 [node name="CenaGameOver" type="Control"]
 layout_mode = 3
