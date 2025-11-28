@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 TimeManager="*res://Assets/Scripts/TimeManager.gd"
 TaskManager="*res://Assets/Scripts/TaskManager.gd"
 TransitionManager="*res://Assets/Scripts/TransitionManager.gd"
+GlobalVar="*res://Assets/Scripts/Global.gd"
 
 [display]
 
