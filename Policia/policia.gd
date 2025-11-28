@@ -30,6 +30,8 @@ var is_waiting = false
 
 
 func _ready():
+	patrol_point_a = to_global(patrol_point_a)
+	patrol_point_b = to_global(patrol_point_b)
 	patrol_target = patrol_point_b
 	_update_vision_cone()
 
