@@ -25,6 +25,9 @@ func _ready() -> void:
 		time_bonus,
 		total
 	]
+	
+	GlobalVar.total_time += GlobalVar.time_elapsed_day
+	GlobalVar.score += total
 
 	match GlobalVar.dia:
 		1:
