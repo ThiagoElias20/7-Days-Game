@@ -27,7 +27,7 @@ func _s(v: float) -> float:
 
 func _build_ui() -> void:
 	# ===== Fundo com IMAGEM =====
-	var bg_texture := preload("res://ui/main_menu/background_init.jpeg")
+	var bg_texture := preload("res://main_menu/background_init.jpeg")
 	var bg := TextureRect.new()
 	bg.name = "Background"
 	bg.texture = bg_texture
@@ -197,7 +197,7 @@ func _on_play() -> void:
 	print("Novo Jogo -> Carregando Cutscene")
 	
 	# Esta linha foi alterada:
-	get_tree().change_scene_to_file("res://ui/main_menu/Cutscene1.tscn")
+	get_tree().change_scene_to_file("res://main_menu/Cutscene1.tscn")
 
 func _on_continue() -> void:
 	if FileAccess.file_exists("user://savegame.dat"):

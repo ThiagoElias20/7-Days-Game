@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 
-const PROXIMA_CENA = "res://interior1.tscn"
+const PROXIMA_CENA = "res://Mapa/interior1.tscn"
 
 func _ready() -> void:
 	anim_player.animation_finished.connect(_ao_terminar_animacao)
