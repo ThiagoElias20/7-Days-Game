@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://khfxu1pltd1u"]
+[gd_scene load_steps=10 format=3 uid="uid://khfxu1pltd1u"]
 
 [ext_resource type="Script" uid="uid://d26hk7co8m84n" path="res://Gameplay/dia_1.gd" id="1_jm3fx"]
 [ext_resource type="PackedScene" uid="uid://0br34cr0nchn" path="res://Mapa/mapa_main.tscn" id="1_k7b7i"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bqru4pdr4eodu" path="res://Tasks/panfletos/panfletos.tscn" id="4_n0lqk"]
 [ext_resource type="PackedScene" uid="uid://ns0j27nxdcqc" path="res://Policia/policia.tscn" id="5_meiwx"]
 [ext_resource type="AudioStream" uid="uid://bwo67daqc55fe" path="res://Assets/Sons/main_game_song.wav" id="7_elkfc"]
+[ext_resource type="PackedScene" uid="uid://cdt364fu6s6ma" path="res://Npc/npc_1.tscn" id="8_p4jyv"]
+[ext_resource type="PackedScene" uid="uid://cey42ovef5pa7" path="res://Npc/npc_2.tscn" id="9_kouj3"]
 
 [node name="Dia 1" type="Node2D"]
 position = Vector2(-4096, 2440)
@@ -39,11 +41,11 @@ position = Vector2(5923, 1449)
 eh_o_mural_secreto = true
 
 [node name="Player" parent="." instance=ExtResource("2_jm3fx")]
-position = Vector2(4738, 1481)
+position = Vector2(6194, 949)
 speed = 150.0
 
 [node name="Policia" parent="." instance=ExtResource("5_meiwx")]
-position = Vector2(4886, 1623)
+position = Vector2(4997, 1655)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(0, 300)
 wander_speed = 80.0
@@ -64,7 +66,7 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia5" parent="." instance=ExtResource("5_meiwx")]
-position = Vector2(6923, -299)
+position = Vector2(7112, -324)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(-200, 0)
 wait_time_patrol = 2.0
@@ -87,12 +89,48 @@ wait_time_patrol = 2.0
 wander_speed = 80.0
 chase_speed = 80.0
 
+[node name="Policia7" parent="." instance=ExtResource("5_meiwx")]
+position = Vector2(5931, 710)
+patrol_point_a = Vector2(0, 0)
+patrol_point_b = Vector2(0, -200)
+wait_time_patrol = 2.0
+wander_speed = 80.0
+chase_speed = 80.0
+
+[node name="Policia8" parent="." instance=ExtResource("5_meiwx")]
+position = Vector2(5929, 1276)
+patrol_point_a = Vector2(0, 0)
+patrol_point_b = Vector2(0, 200)
+wait_time_patrol = 2.0
+wander_speed = 80.0
+chase_speed = 80.0
+
+[node name="Policia9" parent="." instance=ExtResource("5_meiwx")]
+position = Vector2(6571, 755)
+patrol_point_a = Vector2(0, 0)
+patrol_point_b = Vector2(0, 600)
+wait_time_patrol = 2.0
+wander_speed = 80.0
+chase_speed = 80.0
+
 [node name="TimeCounter" type="Timer" parent="."]
 autostart = true
 
 [node name="BackGroundSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_elkfc")
 autoplay = true
+
+[node name="NPC_1" parent="." instance=ExtResource("8_p4jyv")]
+position = Vector2(5486, 1487)
+
+[node name="NPC_2" parent="." instance=ExtResource("8_p4jyv")]
+position = Vector2(5310, 823)
+
+[node name="NPC_4" parent="." instance=ExtResource("8_p4jyv")]
+position = Vector2(4511, 392)
+
+[node name="NPC_3" parent="." instance=ExtResource("9_kouj3")]
+position = Vector2(4487, 392)
 
 [connection signal="timeout" from="TimeCounter" to="." method="_on_time_counter_timeout"]
 
