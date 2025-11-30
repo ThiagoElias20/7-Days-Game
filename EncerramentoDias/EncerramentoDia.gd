@@ -18,7 +18,7 @@ func _ready() -> void:
 
 	var total = primary + secondary + time_bonus
 
-	texto = "Tempo Decorrido: %s\nPontuação Tasks Primarias: %s\nPontuação Tasks Secundárias: %s\nBônus por Tempo: %s\nPontuacaoTotal: %s" % [
+	texto = "Tempo Decorrido: %s s\nPontuação Tasks Primarias: %s pts\nPontuação Tasks Secundárias: %s pts\nBônus por Tempo: %s pts\nPontuacaoTotal: %s pts" % [
 		GlobalVar.time_elapsed_day,
 		primary,
 		secondary,
@@ -36,8 +36,8 @@ func _ready() -> void:
 			$Dia2.visible = true
 		3:
 			$Dia3.visible = true
-
-	$Stats.text = texto
+	#$Stats.text = texto
+	await typewrite($Stats, texto, 0.02)
 
 
 func calcular_bonus_tempo(segundos: int) -> float:
@@ -45,3 +45,9 @@ func calcular_bonus_tempo(segundos: int) -> float:
 	if bonus < 0:
 		bonus = 0
 	return bonus
+
+func typewrite(label: RichTextLabel, texto: String, speed: float) -> void:
+	label.text = ""
+	for c in texto:
+		label.text += c
+		await get_tree().create_timer(speed).timeout

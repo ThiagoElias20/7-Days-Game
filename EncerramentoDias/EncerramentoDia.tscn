@@ -32,6 +32,7 @@ text = "Tempo Decorrido: ${Tempo}
 Pontuação Tasks Primarias: ${PontuacaoPri}
 Pontuação Tasks Secundárias: ${PontuacaoSec}
 PontuacaoTotal: ${PontuacaoTotal}"
+scroll_following = true
 tab_size = 11
 
 [node name="Trilha" type="AudioStreamPlayer" parent="."]
