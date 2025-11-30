@@ -45,6 +45,7 @@ func place_flyer():
 				print("Missão principal completa! Liberando Mural...")
 				current_tasks.append(MURAL_TASK_NAME)
 				mural_unlocked.emit()
+				GlobalVar.is_day_completed = true
 		
 		# CASO B: Panfleto do Mural (O 6º panfleto)
 		elif flyers_placed == FLYER_TARGET + 1:
@@ -53,6 +54,8 @@ func place_flyer():
 				if current_tasks[i] == MURAL_TASK_NAME:
 					current_tasks[i] = MURAL_TASK_COMPLETED
 					break
+			
+			GlobalVar.is_secondary_task_completed = true
 			
 			# 2. ADICIONA A NOVA TAREFA: VOLTAR PARA CASA
 			current_tasks.append("Voltar para casa")
