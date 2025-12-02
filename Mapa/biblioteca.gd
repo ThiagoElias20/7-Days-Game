@@ -12,4 +12,4 @@ func _on_descobre_armario_falso_body_entered(body: Node2D) -> void:
 
 func _on_entra_na_portinha_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		null
+		get_tree().change_scene_to_file("res://Mapa/porão.tscn")

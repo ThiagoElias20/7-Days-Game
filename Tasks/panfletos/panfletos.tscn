@@ -1,11 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqru4pdr4eodu"]
 
-[ext_resource type="Texture2D" uid="uid://c4d23yi81s2t4" path="res://Images/panfletos.PNG" id="1_5ng5e"]
+[ext_resource type="Texture2D" uid="uid://c4d23yi81s2t4" path="res://Assets/Images/panfletos.PNG" id="1_5ng5e"]
 [ext_resource type="Script" uid="uid://c4h5kecvt5b80" path="res://Tasks/panfletos/panfletos.gd" id="1_8y22l"]
 [ext_resource type="Script" uid="uid://c0wcoky1w8hqr" path="res://Tasks/panfletos/area.gd" id="2_7vac8"]
 [ext_resource type="PackedScene" uid="uid://epukii1whgnd" path="res://Tasks/panfletos/objective.tscn" id="3_uv35d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8y22l"]
+radius = 13.520823
 
 [node name="Panfletos" type="Node2D"]
 scale = Vector2(0.1, 0.1)
