@@ -147,7 +147,7 @@ func _can_see_player(player):
 
 func _go_to_game_over():
 	velocity = Vector2.ZERO
-	get_tree().change_scene_to_file("res://main_menu/cena_game_over.tscn")
+	get_tree().change_scene_to_file("res://main_menu/cena_game_over_dia1.tscn")
 
 # ------------------ ANIMAÇÃO ----------------------
 
