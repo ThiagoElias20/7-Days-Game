@@ -10,3 +10,5 @@ var is_secondary_task_completed : bool = false
 
 var PontuacoesPrimarias = [300,400,500,600,700]
 var PontuacoesSecundarias = [150, 200, 250, 300, 350]
+
+var proxima_cena = ""
