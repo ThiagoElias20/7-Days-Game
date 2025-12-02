@@ -8,6 +8,7 @@ var time_elapsed_day : float = 0.0
 var is_day_completed : bool = false
 var is_secondary_task_completed : bool = false
 
+var traidor_confrontado : bool = false
 var PontuacoesPrimarias = [300,400,500,600,700]
 var PontuacoesSecundarias = [150, 200, 250, 300, 350]
 

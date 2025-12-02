@@ -1,9 +1,11 @@
 [gd_scene load_steps=30 format=3 uid="uid://cey42ovef5pa7"]
 
 [ext_resource type="Script" uid="uid://cplb7tjqyd373" path="res://Npc/npc_1.gd" id="1_exuf6"]
-[ext_resource type="Texture2D" uid="uid://b7ph8o1mg3ukj" path="res://Images/npc_2.png" id="2_iwf7d"]
+[ext_resource type="Texture2D" uid="uid://b7ph8o1mg3ukj" path="res://Assets/Images/npc_2.png" id="2_iwf7d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xxcha"]
+radius = 7.0
+height = 26.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mkmg"]
 atlas = ExtResource("2_iwf7d")
@@ -220,6 +222,6 @@ autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qcaju")
-animation = &"UP"
+animation = &"RIGHT"
 
 [connection signal="timeout" from="Timer" to="." method="pick_new_direction"]

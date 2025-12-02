@@ -63,6 +63,12 @@ func place_flyer():
 			# 3. AVISA A PORTA
 			casa_liberada.emit()
 
+
+# Função para definir uma tarefa simples (texto direto, sem contar 0/5)
+func set_simple_task(task_text: String):
+	current_tasks.clear()
+	current_tasks.append(task_text)
+	tasks_updated.emit(current_tasks)
 	# Atualiza o HUD
 	tasks_updated.emit(current_tasks)
 	flyer_count_changed.emit(flyers_placed)
