@@ -1,0 +1,107 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca2kh48hanwdq"]
+
+[ext_resource type="Texture2D" uid="uid://vwelv0465e11" path="res://Assets/Images/icon_triangulo.png" id="1_dgvxf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aelxl"]
+bg_color = Color(1, 1, 1, 0.9411765)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8n4c"]
+bg_color = Color(0.0084198015, 0.03164183, 0.74137235, 1)
+
+[sub_resource type="Animation" id="Animation_73hwa"]
+resource_name = "seta"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaixaTexto/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(34, 34), Vector2(34, 32), Vector2(34, 34)]
+}
+
+[sub_resource type="Animation" id="Animation_wy4ie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CaixaTexto/TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 34)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8d416"]
+_data = {
+&"RESET": SubResource("Animation_wy4ie"),
+&"seta": SubResource("Animation_73hwa")
+}
+
+[node name="DialogBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CaixaTexto" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aelxl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CaixaTexto"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CaixaTexto"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 34.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dgvxf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CaixaNome" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -38.0
+offset_right = 3.0
+offset_bottom = 2.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g8n4c")
+
+[node name="ColorRect" type="ColorRect" parent="CaixaNome"]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 6.0
+color = Color(1, 1, 0, 1)
+
+[node name="Label" type="Label" parent="CaixaNome"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8d416")
+}
+autoplay = "seta"
