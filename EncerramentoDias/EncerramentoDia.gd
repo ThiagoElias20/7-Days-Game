@@ -18,7 +18,7 @@ func _ready() -> void:
 
 	var total = primary + secondary + time_bonus
 
-	texto = "Tempo Decorrido: %s s\nPontuação Tasks Primarias: %s pts\nPontuação Tasks Secundárias: %s pts\nBônus por Tempo: %s pts\nPontuacaoTotal: %s pts" % [
+	texto = "Tempo Decorrido: %s s\nPontuação Tasks Primarias: %s pts\nPontuação Tasks Secundárias: %s pts\nBônus por Tempo: %s pts\nPontuacaoTotal: %s pts\n Aperte qualquer tecla para continuar..." % [
 		GlobalVar.time_elapsed_day,
 		primary,
 		secondary,
@@ -58,4 +58,4 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		var proxima = GlobalVar.dia + 1
 		if len(texto) == len($Stats.text):
-			get_tree().change_scene_to_file("res://Gameplay/Dia3.tscn")
+			get_tree().change_scene_to_file("res://Gameplay/Dia"+proxima+".tscn")
