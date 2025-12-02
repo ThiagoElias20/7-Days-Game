@@ -1,4 +1,4 @@
-[gd_scene load_steps=330 format=4 uid="uid://0br34cr0nchn"]
+[gd_scene load_steps=332 format=4 uid="uid://0br34cr0nchn"]
 
 [ext_resource type="Script" uid="uid://cenbyvnfx54gr" path="res://Mapa/mapa_main.gd" id="1_l7qiy"]
 [ext_resource type="Texture2D" uid="uid://bp4r3abycdgg2" path="res://Sprites/WIP_Theme/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Terrains_and_Fences_16x16_Others_3.png" id="1_puxh5"]
@@ -157,6 +157,7 @@
 [ext_resource type="Texture2D" uid="uid://caumqne3w8t05" path="res://Sprites/WIP_Theme/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Villas_16x16_Villa_Yard_Toy_Rocking_6.png" id="154_g1g37"]
 [ext_resource type="Texture2D" uid="uid://cvb18ock0bq7a" path="res://Sprites/WIP_Theme/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/23_MIlitary_Base_16x16_Bunker_Base.png" id="155_qfhxx"]
 [ext_resource type="Texture2D" uid="uid://jwfy6cmx1veh" path="res://Sprites/WIP_Theme/Modern_Exteriors_16x16/Modern_Exteriors_Complete_Singles_16x16/ME_Singles_Police_Station_16x16_Badge_1.png" id="156_2ekve"]
+[ext_resource type="PackedScene" uid="uid://epukii1whgnd" path="res://Tasks/panfletos/objective.tscn" id="158_62p52"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2oq3f"]
 texture = ExtResource("1_puxh5")
@@ -62133,6 +62134,9 @@ sources/2 = SubResource("TileSetAtlasSource_j4q62")
 [sub_resource type="CircleShape2D" id="CircleShape2D_62p52"]
 radius = 13.414673
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hlpk"]
+size = Vector2(23, 20)
+
 [node name="Mapa" type="Node2D"]
 position = Vector2(-4096, 2440)
 script = ExtResource("1_l7qiy")
@@ -62195,5 +62199,16 @@ position = Vector2(6164, 933)
 position = Vector2(0, 4)
 scale = Vector2(1.64, 1.64)
 shape = SubResource("CircleShape2D_62p52")
+
+[node name="Biblioteca" type="Area2D" parent="."]
+position = Vector2(7397.0005, 808)
+scale = Vector2(2.7942808, 4.072889)
+
+[node name="porta" type="CollisionShape2D" parent="Biblioteca"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_1hlpk")
+
+[node name="Objective" parent="Biblioteca" instance=ExtResource("158_62p52")]
+pivot_offset = Vector2(0, 2)
 
 [connection signal="body_entered" from="Casa Protagonista/Area2D" to="." method="_on_area_2d_body_entered"]

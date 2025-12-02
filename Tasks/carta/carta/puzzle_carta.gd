@@ -11,7 +11,6 @@ signal puzzle_falhou
 
 func _ready():
 	# --- Verifique no editor se os paths acima existem! ---
-	texto_cifrado.text = "QPSBP EB SFJUPSJB" # texto encriptado de exemplo
 
 	# Conecta sinais (usando os nós já carregados)
 	botao_enviar.pressed.connect(_verificar_resposta)

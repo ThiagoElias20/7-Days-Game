@@ -1,61 +1,43 @@
 [gd_scene load_steps=5 format=3 uid="uid://01e5r7rjiowr"]
 
-[ext_resource type="Script" uid="uid://bbvykr4jdemry" path="res://scenes/carta/puzzle_carta.gd" id="1_orrwx"]
-[ext_resource type="Texture2D" uid="uid://ca0r5ijrxkki5" path="res://scenes/escravininha.png" id="2_orrwx"]
-[ext_resource type="Texture2D" uid="uid://ctmwx8nam3sik" path="res://scenes/papel.jpg" id="3_k6rl3"]
-[ext_resource type="FontFile" uid="uid://pjpwsdtb7qi" path="res://scenes/SpecialElite-Regular.ttf" id="4_k6rl3"]
+[ext_resource type="Script" uid="uid://bbvykr4jdemry" path="res://Tasks/carta/carta/puzzle_carta.gd" id="1_orrwx"]
+[ext_resource type="Texture2D" uid="uid://ca0r5ijrxkki5" path="res://Tasks/carta/escravininha.png" id="2_orrwx"]
+[ext_resource type="Texture2D" uid="uid://ctmwx8nam3sik" path="res://Tasks/carta/papel.jpg" id="3_k6rl3"]
+[ext_resource type="FontFile" uid="uid://pjpwsdtb7qi" path="res://Tasks/carta/SpecialElite-Regular.ttf" id="4_k6rl3"]
 
 [node name="PuzzleCarta" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -104.0
-offset_top = -128.0
-offset_right = -104.0
-offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_orrwx")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 696.0
-offset_top = 552.0
-offset_right = 696.0
-offset_bottom = 552.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.78431374)
 
 [node name="Mesa" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -652.0
-offset_top = -500.0
-offset_right = 724.0
-offset_bottom = 548.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.99618286, 0.9968133)
+pivot_offset = Vector2(1.980198, -2)
 texture = ExtResource("2_orrwx")
 expand_mode = 1
 stretch_mode = 6
 
 [node name="Bilhete" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 133.0
-offset_top = -344.0
-offset_right = 1144.0
-offset_bottom = 1028.0
+offset_left = 226.0
+offset_top = -286.0
+offset_right = 1237.0
+offset_bottom = 1086.0
+scale = Vector2(0.47602013, 0.45687568)
+pivot_offset = Vector2(322.84424, 559.6607)
 texture = ExtResource("3_k6rl3")
 expand_mode = 1
 stretch_mode = 5
-metadata/_edit_use_anchors_ = true
 
 [node name="TextoCifrado" type="Label" parent="Bilhete"]
 layout_mode = 0
@@ -63,6 +45,7 @@ offset_left = 2.0
 offset_top = 135.0
 offset_right = 1010.0
 offset_bottom = 1112.0
+scale = Vector2(0.98005295, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_k6rl3")
 theme_override_font_sizes/font_size = 37
@@ -110,10 +93,12 @@ vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 281.0
-offset_top = 831.0
-offset_right = 1033.0
-offset_bottom = 1164.0
+offset_left = 326.99997
+offset_top = 795.0
+offset_right = 1079.0
+offset_bottom = 1128.0
+scale = Vector2(0.46663272, 0.34849676)
+pivot_offset = Vector2(254.99966, -354.0078)
 theme_override_constants/separation = 15
 
 [node name="Label" type="Label" parent="VBoxContainer"]

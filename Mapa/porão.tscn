@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bpdultgv0kovy"]
+[gd_scene load_steps=24 format=4 uid="uid://bpdultgv0kovy"]
 
 [ext_resource type="Texture2D" uid="uid://c2kihmbynsxq1" path="res://Assets/Images/Room_Builder_Walls_16x16.png" id="1_ro27d"]
 [ext_resource type="Script" uid="uid://dpvywv6j8llnh" path="res://Mapa/porão.gd" id="1_ygxa8"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b45fh63adr7sm" path="res://Assets/Images/5_Classroom_and_library_Black_Shadow_16x16.png" id="6_nqasi"]
 [ext_resource type="Texture2D" uid="uid://dvkhm7lq21awg" path="res://Assets/Images/1_Generic_Black_Shadow_16x16.png" id="7_ltt1k"]
 [ext_resource type="PackedScene" uid="uid://b7ry4tustecew" path="res://Player/player.tscn" id="8_okh6p"]
+[ext_resource type="PackedScene" uid="uid://epukii1whgnd" path="res://Tasks/panfletos/objective.tscn" id="10_revhq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bx4u"]
 texture = ExtResource("1_ro27d")
@@ -5891,7 +5892,7 @@ sources/2 = SubResource("TileSetAtlasSource_gtcdv")
 sources/3 = SubResource("TileSetAtlasSource_x6e8a")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okh6p"]
-size = Vector2(30, 20)
+size = Vector2(23, 20)
 
 [node name="Porão" type="Node2D"]
 script = ExtResource("1_ygxa8")
@@ -5918,8 +5919,19 @@ position = Vector2(297, 142)
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(49, 77)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(304, 72)
+[node name="porta" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(308, 68)
 shape = SubResource("RectangleShape2D_okh6p")
 
+[node name="escrivaninha" type="Area2D" parent="."]
+position = Vector2(177, 144)
+
+[node name="porta" type="CollisionShape2D" parent="escrivaninha"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_okh6p")
+
+[node name="Objective" parent="escrivaninha" instance=ExtResource("10_revhq")]
+pivot_offset = Vector2(0, 2)
+
 [connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="escrivaninha" to="." method="_on_area_2d_2_body_entered"]
