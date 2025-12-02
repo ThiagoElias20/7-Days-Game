@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bq1haaiam04h2"]
+[gd_scene load_steps=19 format=3 uid="uid://bq1haaiam04h2"]
 
 [ext_resource type="Script" uid="uid://bimdyqag2p48g" path="res://Assets/Scripts/interior_1.gd" id="1_0hugq"]
 [ext_resource type="Texture2D" uid="uid://dx57x56ol2wf1" path="res://Sprites/INTERIOR CASA/InteriorTilesLITE.png" id="2_xjchk"]
 [ext_resource type="Texture2D" uid="uid://dvkhm7lq21awg" path="res://Assets/Images/1_Generic_Black_Shadow_16x16.png" id="3_spmw7"]
 [ext_resource type="Script" uid="uid://wvdiuj8tahg4" path="res://Assets/Scripts/porta-casa.gd" id="4_rx5jq"]
 [ext_resource type="PackedScene" uid="uid://b7ry4tustecew" path="res://Player/player.tscn" id="5_fhrry"]
+[ext_resource type="AudioStream" uid="uid://c1un36yni2bgi" path="res://Assets/Sons/Sala_segura_soundtrack.mp3" id="6_xjchk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuseo"]
 texture = ExtResource("2_xjchk")
@@ -4242,5 +4243,9 @@ shape = SubResource("RectangleShape2D_yuseo")
 
 [node name="Player" parent="." instance=ExtResource("5_fhrry")]
 position = Vector2(427, -80)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xjchk")
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

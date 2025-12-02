@@ -58,4 +58,5 @@ func _unhandled_input(event):
 	if event.is_pressed():
 		var proxima = GlobalVar.dia + 1
 		if len(texto) == len($Stats.text):
-			get_tree().change_scene_to_file("res://Gameplay/Dia"+str(proxima)+".tscn")
+			get_tree().change_scene_to_file("res://main_menu/Loading.tscn")
+			GlobalVar.proxima_cena = "res://Gameplay/Dia"+str(proxima)+".tscn"

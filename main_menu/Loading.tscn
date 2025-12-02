@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://crj2owp22b5ar"]
+
+[ext_resource type="Script" uid="uid://bnbqwknolpj76" path="res://Assets/Scripts/loading.gd" id="1_siysw"]
+[ext_resource type="Texture2D" uid="uid://dgbwflkst20x5" path="res://Assets/Images/Loading.png" id="2_vnjdv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_siysw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2040.0
+offset_bottom = 1199.0
+texture = ExtResource("2_vnjdv")
+expand_mode = 1
+
+[node name="Carregando" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1212.0
+offset_top = 992.0
+offset_right = 1568.0
+offset_bottom = 1054.0
+theme_override_font_sizes/font_size = 41
+text = "CARREGANDO: "
+
+[node name="Pontos" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1526.0
+offset_top = 992.0
+offset_right = 1882.0
+offset_bottom = 1054.0
+theme_override_font_sizes/font_size = 41
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

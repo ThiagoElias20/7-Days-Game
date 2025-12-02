@@ -1,5 +1,15 @@
-[gd_scene format=3 uid="uid://dkjfqgmbr68u3"]
+[gd_scene load_steps=3 format=3 uid="uid://dkjfqgmbr68u3"]
+
+[ext_resource type="Script" uid="uid://bdqre55mbgs4i" path="res://SistemaDiaNoite/dianoite.gd" id="1_5cbhs"]
+
+[sub_resource type="Gradient" id="Gradient_5cbhs"]
+offsets = PackedFloat32Array(0.25, 0.5, 0.75, 1)
+colors = PackedColorArray(0.46666667, 0.4627451, 0.14901961, 0.34509805, 0.77801156, 0.64189756, 0.27602682, 0.43137255, 0.46097928, 0.61032325, 0.9992226, 0.5019608, 0, 0.047058824, 0.14509805, 0.80784315)
+metadata/_snap_enabled = true
+metadata/_snap_count = 4
 
 [node name="SistemaDiaNoite" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("1_5cbhs")
+gradiente_dia_noite = SubResource("Gradient_5cbhs")
