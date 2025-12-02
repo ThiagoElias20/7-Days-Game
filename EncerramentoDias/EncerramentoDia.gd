@@ -38,6 +38,7 @@ func _ready() -> void:
 			$Dia3.visible = true
 	#$Stats.text = texto
 	await typewrite($Stats, texto, 0.02)
+	
 
 
 func calcular_bonus_tempo(segundos: int) -> float:
@@ -51,3 +52,10 @@ func typewrite(label: RichTextLabel, texto: String, speed: float) -> void:
 	for c in texto:
 		label.text += c
 		await get_tree().create_timer(speed).timeout
+
+
+func _unhandled_input(event):
+	if event.is_pressed():
+		var proxima = GlobalVar.dia + 1
+		if len(texto) == len($Stats.text):
+			get_tree().change_scene_to_file("res://Gameplay/Dia3.tscn")
