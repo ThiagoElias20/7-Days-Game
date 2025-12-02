@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d26hk7co8m84n" path="res://Gameplay/dia_1.gd" id="1_jm3fx"]
 [ext_resource type="PackedScene" uid="uid://0br34cr0nchn" path="res://Mapa/mapa_main.tscn" id="1_k7b7i"]
 [ext_resource type="PackedScene" uid="uid://b7ry4tustecew" path="res://Player/player.tscn" id="2_jm3fx"]
-[ext_resource type="PackedScene" uid="uid://chlgwbafrebam" path="res://ui/main_menu/hud.tscn" id="3_g07gj"]
+[ext_resource type="PackedScene" uid="uid://chlgwbafrebam" path="res://main_menu/hud.tscn" id="3_g07gj"]
 [ext_resource type="PackedScene" uid="uid://bqru4pdr4eodu" path="res://Tasks/panfletos/panfletos.tscn" id="4_n0lqk"]
 [ext_resource type="PackedScene" uid="uid://ns0j27nxdcqc" path="res://Policia/policia.tscn" id="5_meiwx"]
 [ext_resource type="AudioStream" uid="uid://bwo67daqc55fe" path="res://Assets/Sons/main_game_song.wav" id="7_elkfc"]

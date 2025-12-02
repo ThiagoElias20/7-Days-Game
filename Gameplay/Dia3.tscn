@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkem7bxmdofnt"]
+
+[ext_resource type="PackedScene" uid="uid://0br34cr0nchn" path="res://Mapa/mapa_main.tscn" id="1_30aqv"]
+
+[node name="Dia3" type="Node2D"]
+
+[node name="Mapa" parent="." instance=ExtResource("1_30aqv")]
+position = Vector2(-4100, 2472)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1kygbkna2uu7"]
+
+[ext_resource type="Script" uid="uid://cenbyvnfx54gr" path="res://Mapa/mapa_main.gd" id="1_1v427"]
+[ext_resource type="PackedScene" uid="uid://0br34cr0nchn" path="res://Mapa/mapa_main.tscn" id="2_hha5k"]
+
+[node name="Dia4" type="Node2D"]
+script = ExtResource("1_1v427")
+
+[node name="Mapa" parent="." instance=ExtResource("2_hha5k")]
+position = Vector2(-4100, 2453)
