@@ -1,0 +1,145 @@
+[gd_scene load_steps=5 format=3 uid="uid://01e5r7rjiowr"]
+
+[ext_resource type="Script" uid="uid://bbvykr4jdemry" path="res://scenes/carta/puzzle_carta.gd" id="1_orrwx"]
+[ext_resource type="Texture2D" uid="uid://ca0r5ijrxkki5" path="res://scenes/escravininha.png" id="2_orrwx"]
+[ext_resource type="Texture2D" uid="uid://ctmwx8nam3sik" path="res://scenes/papel.jpg" id="3_k6rl3"]
+[ext_resource type="FontFile" uid="uid://pjpwsdtb7qi" path="res://scenes/SpecialElite-Regular.ttf" id="4_k6rl3"]
+
+[node name="PuzzleCarta" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -104.0
+offset_top = -128.0
+offset_right = -104.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_orrwx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 696.0
+offset_top = 552.0
+offset_right = 696.0
+offset_bottom = 552.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="Mesa" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -652.0
+offset_top = -500.0
+offset_right = 724.0
+offset_bottom = 548.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_orrwx")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Bilhete" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 133.0
+offset_top = -344.0
+offset_right = 1144.0
+offset_bottom = 1028.0
+texture = ExtResource("3_k6rl3")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextoCifrado" type="Label" parent="Bilhete"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 135.0
+offset_right = 1010.0
+offset_bottom = 1112.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_k6rl3")
+theme_override_font_sizes/font_size = 37
+text = "Me aproximei. Havia uma anotação na margem da página, feita com a caneta vermelha que o professor usava para corrigir nossas provas. A letra estava trêmula, escrita às pressas:
+
+\"Eles não entendem a história. Para vencer a tirania, a resistência precisa estar sempre um passo à frente.\"
+
+Logo abaixo da anotação, solto sobre a página, havia um pedaço de papel pautado, rasgado de um caderno espiral. Nele, apenas duas palavras em letras garrafais, codificadas no desespero dos últimos segundos antes da prisão:
+
+R V F J N B S
+B S R V J W P T
+
+Olhei para a anotação vermelha novamente. \"Um passo à frente\". O professor nunca escrevia nada sem motivo. Se a letra que ele escreveu está um passo à frente... para entender a verdade, eu preciso dar um passo para trás."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Titulo" type="Label" parent="Bilhete"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 40.0
+offset_right = 872.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+theme_override_fonts/font = ExtResource("4_k6rl3")
+theme_override_font_sizes/font_size = 50
+text = "O Gabinete 304"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dica" type="Label" parent="Bilhete"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 1100.0
+offset_right = 828.0
+offset_bottom = 1145.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.7529412)
+theme_override_fonts/font = ExtResource("4_k6rl3")
+theme_override_font_sizes/font_size = 32
+text = "O meu nome é: \" A L E N C A R ⬇ B M F O D B S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SonsCanetaPapel" type="AudioStreamPlayer2D" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 831.0
+offset_right = 1033.0
+offset_bottom = 1164.0
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_k6rl3")
+theme_override_font_sizes/font_size = 36
+text = "Digite o texto decifrado:"
+horizontal_alignment = 1
+
+[node name="CampoResposta" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+
+[node name="BotaoEnviar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0.92156863)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.0018410678, 0.0018410682, 0.0018410678, 1)
+theme_override_colors/font_hover_color = Color(0.15847212, 0.1584723, 0.15847275, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0.5019608)
+theme_override_colors/icon_focus_color = Color(0.008202022, 0.008202025, 0.008202025, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.34781694, 0.34781697, 0.3478169, 1)
+theme_override_colors/icon_disabled_color = Color(0.3328807, 0.33288068, 0.33288068, 0.4)
+theme_override_fonts/font = ExtResource("4_k6rl3")
+theme_override_font_sizes/font_size = 40
+text = "Confirmar"
