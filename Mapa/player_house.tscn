@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bimdyqag2p48g" path="res://Assets/Scripts/interior_1.gd" id="1_0hugq"]
 [ext_resource type="Texture2D" uid="uid://dx57x56ol2wf1" path="res://Sprites/INTERIOR CASA/InteriorTilesLITE.png" id="2_xjchk"]
-[ext_resource type="Texture2D" uid="uid://dvkhm7lq21awg" path="res://Images/1_Generic_Black_Shadow_16x16.png" id="3_spmw7"]
+[ext_resource type="Texture2D" uid="uid://dvkhm7lq21awg" path="res://Assets/Images/1_Generic_Black_Shadow_16x16.png" id="3_spmw7"]
 [ext_resource type="Script" uid="uid://wvdiuj8tahg4" path="res://Assets/Scripts/porta-casa.gd" id="4_rx5jq"]
 [ext_resource type="PackedScene" uid="uid://b7ry4tustecew" path="res://Player/player.tscn" id="5_fhrry"]
 

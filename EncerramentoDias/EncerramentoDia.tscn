@@ -23,9 +23,9 @@ stretch_mode = 4
 
 [node name="Stats" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 95.0
+offset_left = 67.0
 offset_top = 816.0
-offset_right = 912.0
+offset_right = 884.0
 offset_bottom = 1194.0
 theme_override_font_sizes/normal_font_size = 32
 text = "Tempo Decorrido: ${Tempo}

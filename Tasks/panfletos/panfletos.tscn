@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://epukii1whgnd" path="res://Tasks/panfletos/objective.tscn" id="3_uv35d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8y22l"]
-radius = 13.520823
+radius = 17.577068
 
 [node name="Panfletos" type="Node2D"]
 scale = Vector2(0.1, 0.1)
