@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://khfxu1pltd1u"]
+[gd_scene load_steps=11 format=3 uid="uid://khfxu1pltd1u"]
 
 [ext_resource type="Script" uid="uid://d26hk7co8m84n" path="res://Gameplay/dia_1.gd" id="1_jm3fx"]
 [ext_resource type="PackedScene" uid="uid://0br34cr0nchn" path="res://Mapa/mapa_main.tscn" id="1_k7b7i"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bwo67daqc55fe" path="res://Assets/Sons/main_game_song.wav" id="7_elkfc"]
 [ext_resource type="PackedScene" uid="uid://cdt364fu6s6ma" path="res://Npc/npc_1.tscn" id="8_p4jyv"]
 [ext_resource type="PackedScene" uid="uid://cey42ovef5pa7" path="res://Npc/npc_2.tscn" id="9_kouj3"]
+[ext_resource type="PackedScene" uid="uid://dkjfqgmbr68u3" path="res://SistemaDiaNoite/SistemaDiaNoite.tscn" id="10_kouj3"]
 
 [node name="Dia 1" type="Node2D"]
 position = Vector2(-4096, 2440)
@@ -131,6 +132,9 @@ position = Vector2(4511, 392)
 
 [node name="NPC_3" parent="." instance=ExtResource("9_kouj3")]
 position = Vector2(4487, 392)
+
+[node name="SistemaDiaNoite" parent="." instance=ExtResource("10_kouj3")]
+position = Vector2(4237, -2317)
 
 [connection signal="timeout" from="TimeCounter" to="." method="_on_time_counter_timeout"]
 
