@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca0r5ijrxkki5"
-path="res://.godot/imported/escravininha.png-df6aa651a27dbf2996fe88e9cdad08e0.ctex"
+path="res://.godot/imported/escravininha.png-cf880f68ed645630862331ae371d2921.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/escravininha.png"
-dest_files=["res://.godot/imported/escravininha.png-df6aa651a27dbf2996fe88e9cdad08e0.ctex"]
+source_file="res://Tasks/carta/escravininha.png"
+dest_files=["res://.godot/imported/escravininha.png-cf880f68ed645630862331ae371d2921.ctex"]
 
 [params]
 

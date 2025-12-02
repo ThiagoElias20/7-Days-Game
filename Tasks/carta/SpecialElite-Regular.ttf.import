@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://pjpwsdtb7qi"
-path="res://.godot/imported/SpecialElite-Regular.ttf-d6d54fff95e7b01ce9f5a410a1ac9242.fontdata"
+path="res://.godot/imported/SpecialElite-Regular.ttf-7c070891832b0a41b793c70ae3a960fe.fontdata"
 
 [deps]
 
-source_file="res://scenes/SpecialElite-Regular.ttf"
-dest_files=["res://.godot/imported/SpecialElite-Regular.ttf-d6d54fff95e7b01ce9f5a410a1ac9242.fontdata"]
+source_file="res://Tasks/carta/SpecialElite-Regular.ttf"
+dest_files=["res://.godot/imported/SpecialElite-Regular.ttf-7c070891832b0a41b793c70ae3a960fe.fontdata"]
 
 [params]
 
