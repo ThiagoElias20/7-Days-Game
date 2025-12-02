@@ -62131,6 +62131,7 @@ texture = ExtResource("156_2ekve")
 sources/2 = SubResource("TileSetAtlasSource_j4q62")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_62p52"]
+radius = 10.38377
 
 [node name="Mapa" type="Node2D"]
 position = Vector2(-4096, 2440)
@@ -62191,7 +62192,7 @@ position = Vector2(6164, 933)
 [node name="Area2D" type="Area2D" parent="Casa Protagonista"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Casa Protagonista/Area2D"]
-position = Vector2(0, 4)
+position = Vector2(0, 18)
 scale = Vector2(1.64, 1.64)
 shape = SubResource("CircleShape2D_62p52")
 
