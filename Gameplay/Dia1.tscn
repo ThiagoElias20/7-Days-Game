@@ -41,12 +41,10 @@ position = Vector2(5923, 1449)
 eh_o_mural_secreto = true
 
 [node name="Player" parent="." instance=ExtResource("2_jm3fx")]
-visible = false
 position = Vector2(6194, 949)
 speed = 150.0
 
 [node name="Policia" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(4997, 1655)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(0, 300)
@@ -54,7 +52,6 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia2" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(5465, 1036)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(200, 0)
@@ -62,7 +59,6 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia3" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(4690, 496)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(500, 0)
@@ -70,7 +66,6 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia5" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(7112, -324)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(-200, 0)
@@ -79,7 +74,6 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia6" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(5729, 1346)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(0, 200)
@@ -88,7 +82,6 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia4" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(6069, 1526)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(0, -200)
@@ -97,7 +90,6 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia7" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(5931, 710)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(0, -200)
@@ -106,7 +98,6 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia8" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(5929, 1035)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(0, 200)
@@ -115,7 +106,6 @@ wander_speed = 80.0
 chase_speed = 80.0
 
 [node name="Policia9" parent="." instance=ExtResource("5_meiwx")]
-visible = false
 position = Vector2(6571, 755)
 patrol_point_a = Vector2(0, 0)
 patrol_point_b = Vector2(0, 600)
