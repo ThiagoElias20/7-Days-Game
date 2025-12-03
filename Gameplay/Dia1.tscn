@@ -17,6 +17,9 @@ script = ExtResource("1_jm3fx")
 
 [node name="HUD" parent="." instance=ExtResource("3_g07gj")]
 
+[node name="SistemaDiaNoite" parent="." instance=ExtResource("10_kouj3")]
+position = Vector2(4237, -2317)
+
 [node name="Mapa" parent="." instance=ExtResource("1_k7b7i")]
 position = Vector2(-0.035243988, 0)
 
@@ -132,9 +135,6 @@ position = Vector2(4511, 392)
 
 [node name="NPC_3" parent="." instance=ExtResource("9_kouj3")]
 position = Vector2(4487, 392)
-
-[node name="SistemaDiaNoite" parent="." instance=ExtResource("10_kouj3")]
-position = Vector2(4237, -2317)
 
 [connection signal="timeout" from="TimeCounter" to="." method="_on_time_counter_timeout"]
 

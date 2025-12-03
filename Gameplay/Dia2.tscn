@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://t8beqtut0i40"]
+[gd_scene load_steps=5 format=3 uid="uid://t8beqtut0i40"]
 
 [ext_resource type="PackedScene" uid="uid://0br34cr0nchn" path="res://Mapa/mapa_main.tscn" id="1_uulji"]
 [ext_resource type="PackedScene" uid="uid://dkjfqgmbr68u3" path="res://SistemaDiaNoite/SistemaDiaNoite.tscn" id="2_y3n3h"]
+[ext_resource type="PackedScene" uid="uid://b7ry4tustecew" path="res://Player/player.tscn" id="3_y3n3h"]
+[ext_resource type="PackedScene" uid="uid://chlgwbafrebam" path="res://main_menu/hud.tscn" id="4_o77f0"]
 
 [node name="Dia2" type="Node2D"]
 
+[node name="HUD" parent="." instance=ExtResource("4_o77f0")]
+
 [node name="Mapa" parent="." instance=ExtResource("1_uulji")]
-position = Vector2(-4093, 2441)
+position = Vector2(-4031, 2377)
+
+[node name="Player" parent="." instance=ExtResource("3_y3n3h")]
+position = Vector2(3250, 3594)
 
 [node name="SistemaDiaNoite" parent="." instance=ExtResource("2_y3n3h")]
 position = Vector2(1187, 680)
